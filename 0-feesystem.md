@@ -148,6 +148,8 @@ FeeSharingSystem.calculateSharesValueInX2Y2(address) / TokenDistributor.totalAmo
 
 另外，根据代码显示，当ILO质押的token全部解锁后（即360天锁定期），开发者将移除ILO的手续费分成。
 
+总体分配比例可参考：[Distribution of WETH fees on x2y2](https://dune.xyz/queries/443677)
+
 ## ILO手续费收益分析
 
 ILO用户的收益由Presale合约（[0xc2F44Bc508b6b50047a2F3AfB1984eD105070bE1](https://etherscan.io/address/0xc2f44bc508b6b50047a2f3afb1984ed105070be1)）单独处理 ，用户可通过*harvest*函数获取手续费收益（WETH），以及通过*withdraw*获取手续费收益及已释放的x2y2 Token收益。原则上1000名ILO用户应**平分**这部分手续费收益，但过早的提取已释放的x2y2 token，可能导致后期分配的手续费收益减少。
