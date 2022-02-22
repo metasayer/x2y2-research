@@ -89,7 +89,7 @@ Presale.getTotalStaked() + balanceOf(财库) + balanceOf(Devs) + TokenDistributo
 
 ```log
 #14252551
-Total Staked: 86842428.906560302996069816
+Total Staked:	86842428.906560302996069816
  - presale:	15000000.0
  - vesting1:	11193162.393162392604891293
  - vesting2:	11193162.393162392604891293
