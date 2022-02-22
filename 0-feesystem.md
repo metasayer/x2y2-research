@@ -6,14 +6,14 @@
 
 | 合约名称 | 地址 | 功能简述 |
 | --- | --- | --- |
-| Presale | 0xc2F44Bc508b6b50047a2F3AfB1984eD105070bE1 | ILO质押池，ILO用户领取解锁token、奖励的合约 |
-| FeeSharingSystem | 0xc8C3CC5be962b6D281E4a53DBcCe1359F76a1B85 | 公共质押池，二级投资者主要交互的合约 |
-| FeeSharingSetter | 0xF704353B5C98577d3B4274614e62Fc79676D33bD | 根据质押比例分配WETH手续费 |
-| TokenSplitter | 0xe7643Ff46C6f88ED812b3E7198c2fA2522d630CC | 为财库、Devs、Listing Rewards按比例分配token |
-| ListingRewardDistributorV2 | 0xc4CcDdcd0239D8425b54322e8E5F99D19FB7Ba43 | NFT Listing Rewards奖励分配 |
-| TokenDistributor | 0xB329e39Ebefd16f40d38f07643652cE17Ca5Bac1 | 负责新token的mint，包括质押奖励、团队解锁、Listing Rewards |
-| VestingContractWithFeeSharing | 0x6d11992a247Ae0d726Cb967A70Fc981e8308B723 | *财库* |
-| VestingContractWithFeeSharing | 0x13C19498De6f026EfF6DfC56e56febe73d50C101 | *Devs* |
+| Presale | [0xc2F44Bc508b6b50047a2F3AfB1984eD105070bE1](https://etherscan.io/address/0xc2F44Bc508b6b50047a2F3AfB1984eD105070bE1) | ILO质押池，ILO用户领取解锁token、奖励的合约 |
+| FeeSharingSystem | [0xc8C3CC5be962b6D281E4a53DBcCe1359F76a1B85](https://etherscan.io/address/0xc8C3CC5be962b6D281E4a53DBcCe1359F76a1B85) | 公共质押池，二级投资者主要交互的合约 |
+| FeeSharingSetter | [0xF704353B5C98577d3B4274614e62Fc79676D33bD](https://etherscan.io/address/0xF704353B5C98577d3B4274614e62Fc79676D33bD) | 根据质押比例分配WETH手续费 |
+| TokenSplitter | [0xe7643Ff46C6f88ED812b3E7198c2fA2522d630CC](https://etherscan.io/address/0xe7643Ff46C6f88ED812b3E7198c2fA2522d630CC) | 为财库、Devs、Listing Rewards按比例分配token |
+| ListingRewardDistributorV2 | [0xc4CcDdcd0239D8425b54322e8E5F99D19FB7Ba43](https://etherscan.io/address/0xc4CcDdcd0239D8425b54322e8E5F99D19FB7Ba43) | NFT Listing Rewards奖励分配 |
+| TokenDistributor | [0xB329e39Ebefd16f40d38f07643652cE17Ca5Bac1](https://etherscan.io/address/0xB329e39Ebefd16f40d38f07643652cE17Ca5Bac1) | 负责新token的mint，包括质押奖励、团队解锁、Listing Rewards |
+| VestingContractWithFeeSharing | [0x6d11992a247Ae0d726Cb967A70Fc981e8308B723](https://etherscan.io/address/0x6d11992a247Ae0d726Cb967A70Fc981e8308B723) | *财库* |
+| VestingContractWithFeeSharing | [0x13C19498De6f026EfF6DfC56e56febe73d50C101](https://etherscan.io/address/0x13C19498De6f026EfF6DfC56e56febe73d50C101) | *Devs* |
 
 *财库、Devs未找到官方文档说明，且链上数据无差异，故标签可能存在错误，但占比缘故不影响分析。*
 
@@ -21,19 +21,19 @@
 
 | 地址 | 功能 |
 | ---- | ---- |
-| 0xDC43b25f3AbF65825E52b73441E47F2Ce0F9c47D | X2Y2Deployer |
-| 0x099BA539CDe20Ff8b87B18460024a9E3acc9E025 | 交易手续费钱包地址 |
-| 0x5D7CcA9Fb832BBD99C8bD720EbdA39B028648301 | 多签钱包地址 |
+| [0xDC43b25f3AbF65825E52b73441E47F2Ce0F9c47D](https://etherscan.io/address/0xDC43b25f3AbF65825E52b73441E47F2Ce0F9c47D) | X2Y2Deployer |
+| [0x099BA539CDe20Ff8b87B18460024a9E3acc9E025](https://etherscan.io/address/0x099BA539CDe20Ff8b87B18460024a9E3acc9E025) | 交易手续费钱包地址 |
+| [0x5D7CcA9Fb832BBD99C8bD720EbdA39B028648301](https://etherscan.io/address/0x5D7CcA9Fb832BBD99C8bD720EbdA39B028648301) | 多签钱包地址 |
 
 *Devs近期将合约Owner迁移至多签钱包，相关合约代码未重新部署，不影响分析。*
 
 ## Token释放分析
 
 目前未铸造的token分布于以下功能：
-- 公共质押池中未分配的X2Y2质押奖励，投资者通过在合约**0xc8C3CC5be962b6D281E4a53DBcCe1359F76a1B85**质押、领取。
-- NFT Listing Rewards，NFT卖家通过在智能合约**0xc4CcDdcd0239D8425b54322e8E5F99D19FB7Ba43**领取。
-- 财库：合约地址为**0x6d11992a247Ae0d726Cb967A70Fc981e8308B723**。
-- Devs：合约地址为**0x13C19498De6f026EfF6DfC56e56febe73d50C101**。
+- 公共质押池中未分配的X2Y2质押奖励，投资者通过在合约[0xc8C3CC5be962b6D281E4a53DBcCe1359F76a1B85](https://etherscan.io/address/0xc8C3CC5be962b6D281E4a53DBcCe1359F76a1B85)质押、领取。
+- NFT Listing Rewards，NFT卖家通过在智能合约[0xc4CcDdcd0239D8425b54322e8E5F99D19FB7Ba43](https://etherscan.io/address/0xc4CcDdcd0239D8425b54322e8E5F99D19FB7Ba43)领取。
+- 财库：合约地址为[0x6d11992a247Ae0d726Cb967A70Fc981e8308B723](https://etherscan.io/address/0x6d11992a247Ae0d726Cb967A70Fc981e8308B723)。
+- Devs：合约地址为[0x13C19498De6f026EfF6DfC56e56febe73d50C101](https://etherscan.io/address/0x13C19498De6f026EfF6DfC56e56febe73d50C101)。
 
 上述为铸造的token随着系统的运行逐步释放，释放比例如官方文档描述，不再赘述。
 
